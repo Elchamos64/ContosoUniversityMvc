@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ContosoUniversity.Models.SchoolViewModels.EnrollmentDateGroup>
+
+@{
+    ViewData["Title"] = "Student Body Statistics";
+}
+
+<h2>Student Body Statistics</h2>
+
+<div class="about-container">
+    <h4>University Enrollment Management System</h4>
+
+    <p>The University Enrollment Management System (UEMS) is a comprehensive web-based application designed to streamline and manage the enrollment
+        processes of Summit Heights University. This system aims to enhance efficiency, reduce paperwork, and provide a
+        user-friendly experience for students, faculty, and administrators.</p>
+
+</div>
+
+<table class="enrollment-container">
+    <tr>
+        <th>
+            Enrollment Date
+        </th>
+        <th>
+            Students
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnrollmentDate)
+            </td>
+            <td>
+                @item.StudentCount
+            </td>
+        </tr>
+    }
+</table>
+
+<div class="contact-info">
+    <h4>If you want to report any errors:</h4>
+    <p>Oscar Ramos</p>
+    <p>oscar.ramos@gmail.com</p>
+    <p>(208)777-7777</p>
+</div>
